@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    {% block css %} {% endblock css %}
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <a href="/posts/home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="{% url "home" %} ">Contact</a>
+    </nav>
+
+    {% block body %}
+    
+    {% endblock body %}
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved by {{name}}</p>
+    </footer>
+
+</body>
+</html>

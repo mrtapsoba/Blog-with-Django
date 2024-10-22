@@ -1,78 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #4CAF50;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+    {% load static %}
+    {% block css %}
+        <link rel="stylesheet" href="{% static "posts/post.css" %}">
+    {% endblock css %}
 
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
+    {% block body %}
     <section>
         <h2>Home Page</h2>
         <p>This is a simple homepage layout created in HTML and styled with basic CSS.</p>
@@ -102,10 +34,4 @@
             <h1>No Items Available<h1>
         {% endif %}
     </section>
-
-    <footer>
-        <p>&copy; 2024 My Website. All rights reserved by {{name}}</p>
-    </footer>
-
-</body>
-</html>
+    {% endblock body %}

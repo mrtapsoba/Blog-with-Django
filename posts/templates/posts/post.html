@@ -1,71 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #4CAF50;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        article {
-            background-color: white;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>{{ post.title }}</h1>
-    </header>
-
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/contact">Contact</a>
-    </nav>
-
+{% extends "base.html" %}
+    {% load static %}
+    {% block css %}
+        <link rel="stylesheet" href="{% static "posts/post.css" %}">
+    {% endblock css %}
+    {% block body %}
     <section>
         <article>
             <h2>{{ item.title }}</h2>
@@ -73,10 +11,4 @@
             <p>{{ item.content }}</p>
         </article>
     </section>
-
-    <footer>
-        <p>&copy; 2024 My Website. All rights reserved by {{ name }}</p>
-    </footer>
-
-</body>
-</html>
+    {% endblock body %}
